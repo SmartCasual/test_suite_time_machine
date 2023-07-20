@@ -137,6 +137,12 @@ module TestSuiteTimeMachine
     def travel_temporarily_to(...)
       TestSuiteTimeMachine.travel_temporarily_to(...)
     end
+
+    def self.included(config)
+      config.before(:each, :time) do |example|
+        set_time(example.metadata[:time])
+      end
+    end
   end
 
   class TimeTravelError < StandardError; end
