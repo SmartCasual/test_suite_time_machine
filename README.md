@@ -76,7 +76,7 @@ This provides the following functionality:
 - adds `travel_temporarily_to(datetime)` as an alias for `TestSuiteTimeMachine.travel_temporarily_to(datetime)`
 
 It also adds the RSpec tag `time` which is a succinct way of invoking
-`travel_temporarily_to` for a given test.
+`travel_permanently_to` for a given test.
 
 ```ruby
 RSpec.describe "Santa's schedule" do
