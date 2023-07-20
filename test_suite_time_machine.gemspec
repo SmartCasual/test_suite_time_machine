@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.email = ["elliot.cm@gmail.com"]
 
   spec.summary = "A small utility to help manage the current date and time in your test suite."
-  spec.description = "Built atop Timecop, this gem provides a more intuitive interface for managing the current date and time across the test suite."
+  spec.description = "Built atop Timecop, this gem provides a more intuitive interface for managing the current date and time across the test suite." # rubocop:disable Layout/LineLength
   spec.homepage = "https://github.com/SmartCasual/test_suite_time_machine"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.1.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "timecop", "~> 0.9"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
