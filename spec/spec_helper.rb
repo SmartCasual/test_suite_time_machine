@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "test_suite_time_machine"
 
 RSpec.configure do |config|
