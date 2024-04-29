@@ -139,6 +139,16 @@ module TestSuiteTimeMachine
     end
 
     def self.included(config)
+      RSpec.configuration.before(:suite) do
+        TestSuiteTimeMachine.pretend_it_is("real_world") if TestSuiteTimeMachine.baseline.nil?
+      end
+
+      config.around do |example|
+        TestSuiteTimeMachine.reset
+        example.run
+        TestSuiteTimeMachine.reset
+      end
+
       config.before(:each, :time) do |example|
         set_time(example.metadata[:time])
       end
